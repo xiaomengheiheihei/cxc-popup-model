@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <button bind:tap="showPopup">点我</button>
+  <my-popup
+    id="mypopup"
+    showTitle="{{showTitle}}"
+    title="{{title}}"
+    model="{{model}}"
+    showModelFooter="{{showModelFooter}}"
+    popupHeight="{{popupHeight}}"
+    direction="{{direction}}"
+    >
+    <view>222222222222222</view>
+    <view>222222222222222</view>
+    <button bind:tap="hide">关闭</button>
+  </my-popup>
+</view>
+                                                                   

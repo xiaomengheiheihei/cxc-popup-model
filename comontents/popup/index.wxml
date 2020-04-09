@@ -1,0 +1,20 @@
+<view class="our-mode-popup-wrap">
+  <view class="our-model-mask {{showMyPopup ? 'our-model-mask-actived': ''}}" bind:tap="close" catchtouchmove="ture"></view>
+  <view class="our-popup-wrap {{model ? 'our-model-wrap' : ''}} {{ showMyPopup ? 'our-model-wrap-display' : ''}}" 
+    catchtouchmove="ture"
+    animation="{{model ? modelAnimation : popupAnimation}}"
+    style="height:{{popupHeight}}; {{direction === 'top' ? 'transform: translateY(-100%);' : direction === 'left' ? 'transform: translateX(-100%);' : direction === 'right' ? 'transform: translateX(100%);' : direction === 'bottom' ? 'transform: translateY(100%);' : model ? '' : ''}}">
+    <view class="popup-title-wrap" wx:if="{{showTitle}}">
+      <text class="popup-title">{{title}}</text>
+    </view>
+    <view class="popup-content-wrap">
+      <view class="popup-content">
+        <slot></slot>
+      </view>
+    </view>
+    <view class="popup-footer-wrap" wx:if="{{showModelFooter}}">
+      <view class="popup-footer-cancel">取消</view>
+      <view class="popup-footer-confrim">确定</view>
+    </view>
+  </view>
+</view>
